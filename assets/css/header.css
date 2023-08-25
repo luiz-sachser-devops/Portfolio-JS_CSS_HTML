@@ -1,0 +1,92 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.header::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(/assets/icons/header.svg);
+}
+.header .photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.header .title {
+    font-family: "Neue Machina";
+    text-align: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.info p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: .5rem;
+    font-size: .9rem;
+}
+
+.info p::before {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: .5rem;
+}
+
+.info .role::before {
+    background-image: url('/assets/icons/icons8-person-90.png');
+}
+
+.info .location::before {
+    background-image: url('/assets/icons/icons8-location-50.png');
+}
+
+.info .phone::before {
+    background-image: url('/assets/icons/icons8-phone-map-pin-90.png');
+}
+
+.info .email::before {
+    background-image: url('/assets/icons/icons8-email-96.png');
+}
+
+@media only screen and (min-width: 768px) {
+    .header {
+        display: grid;
+        grid-template-areas: 
+            "photo title"
+            "photo info"
+        ; 
+    }
+    .header .title {    
+        grid-area: title;
+        margin: 1rem 1rem;
+        text-align: start;
+    }
+    .header .photo {
+        grid-area: photo;
+        margin: 0 auto;
+    }
+    .header .info {
+        grid-area: info;
+    }
+}
